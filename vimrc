@@ -5,11 +5,13 @@ Plug 'gosukiwi/vim-atom-dark'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-commentary'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'Yggdroot/indentLine'
-Plug 'blueyed/vim-diminactive'
+" Plug 'blueyed/vim-diminactive'
 Plug 'akinsho/bufferline.nvim'
 " Python
 Plug 'deoplete-plugins/deoplete-jedi'
@@ -63,21 +65,9 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-" Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-  set termguicolors
-  hi LineNr ctermbg=NONE guibg=NONE
-endif" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-  set termguicolors
-  hi LineNr ctermbg=NONE guibg=NONE
-endif
+set hlsearch
+set termguicolors
 
 " Delete trailing white space on save, useful for Python and CoffeeScript
 func! DeleteTrailingWS()
@@ -95,7 +85,7 @@ autocmd BufWritePre * :%s/\s\+$//e   " Remove trailing whitespaces
 vnoremap <C-c> "+y
 
 " diminactive
-let g:diminactive_enable_focus = 1
+" let g:diminactive_enable_focus = 1
 
 " SETTINGS
 set relativenumber          " Set relative line numbers
@@ -111,7 +101,20 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" Bufferline
 lua << EOF
+-- Bufferline
 require("bufferline").setup{}
+-- Telescope
+require("telescope").setup{}
+--Treesitter
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
 EOF
