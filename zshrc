@@ -23,3 +23,5 @@ if [ -f '/Users/b.thng/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/b.thng/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/b.thng/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH="$HOME/.poetry/bin:$PATH"
