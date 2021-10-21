@@ -18,6 +18,7 @@
 # brew install entr
 # brew install tmuxinator
 # brew install jq
+# brew install fzf
 
 # Install mac apps
 # mas install 1480933944  # Vimari
