@@ -27,3 +27,7 @@
 # mas install 1306893526    # Sorted3
 # mas install 1510445899    # Meeter
 # mas install 937984704     # Amphetamine
+
+# Tap
+# brew tap hashicorp/tap
+# brew install hashicorp/tap/terraform
