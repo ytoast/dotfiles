@@ -1,3 +1,4 @@
-alias github='cd ~/Github'
-alias vi='nvim'
 alias gcmm='gco gcp-main'
+alias github='cd ~/Github'
+alias tf='terraform'
+alias vi='nvim'
