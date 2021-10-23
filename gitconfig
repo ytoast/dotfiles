@@ -1,0 +1,12 @@
+[init]
+	defaultBranch = main
+
+[user]
+	email = brenda.thng@foodpanda.com
+	name = Brenda Thng
+
+[core]
+  excludesfile = ~/.gitignore_global
+
+[pull]
+  ff = only
