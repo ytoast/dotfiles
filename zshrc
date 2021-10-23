@@ -10,7 +10,7 @@ export PATH="/usr/local/opt/libpq/bin:$PATH"
 plugins=(git)
 
 # Load the shell dotfiles, and then some:
-for file in ~/.{aliases,}; do
+for file in ~/.{aliases,ignores/exports}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
