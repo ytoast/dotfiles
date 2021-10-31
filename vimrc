@@ -118,3 +118,5 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+set rtp+=/usr/local/opt/fzf

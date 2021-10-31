@@ -70,5 +70,9 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: true
 
+key_bindings:
+  - { key: Right, mods: Alt, chars: "\x1BF" }
+  - { key: Left,  mods: Alt, chars: "\x1BB" }
+
 live_config_reload: true
 

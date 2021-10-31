@@ -25,3 +25,11 @@ if [ -f '/Users/b.thng/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 if [ -f '/Users/b.thng/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/b.thng/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="/usr/local/opt/python@3.7/bin:$PATH"
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
