@@ -11,7 +11,6 @@ Plug 'tpope/vim-commentary'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'Yggdroot/indentLine'
-" Plug 'blueyed/vim-diminactive'
 Plug 'akinsho/bufferline.nvim'
 " Python
 Plug 'deoplete-plugins/deoplete-jedi'
