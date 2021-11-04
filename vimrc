@@ -19,6 +19,9 @@ Plug 'psf/black'
 " All languages syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
+
+" LSP
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 colorscheme atom-dark
@@ -95,17 +98,10 @@ set signcolumn=yes          " always show signcolumns
 set grepprg=rg\ --vimgrep   " Use RipGrep instead of grep
 set grepformat^=%f:%l:%c:%m
 
-" Treesitter
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 lua << EOF
 -- Bufferline
 require("bufferline").setup{}
--- Telescope
-require("telescope").setup{}
 --Treesitter
 require'nvim-treesitter.configs'.setup {
   highlight = {
@@ -117,6 +113,18 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+-- LSP
+require'lspconfig'.pyright.setup{}
+require'lspconfig'.pylsp.setup{}
+-- Telescope
+require('telescope').setup{
+}
 EOF
+
+" Treesitter
+nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files <cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 set rtp+=/usr/local/opt/fzf

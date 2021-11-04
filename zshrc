@@ -7,7 +7,10 @@ export EDITOR='nvim'
 export AIRFLOW_BUSINESS_UNIT="pandata"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
-plugins=(git)
+plugins=(
+  git
+  zsh-autosuggestions
+)
 
 # Load the shell dotfiles, and then some:
 for file in ~/.{aliases,ignores/exports}; do
