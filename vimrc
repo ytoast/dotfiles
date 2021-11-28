@@ -13,12 +13,17 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua',
 Plug 'Yggdroot/indentLine'
 Plug 'akinsho/bufferline.nvim'
+Plug 'phaazon/hop.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+
 " Python
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'psf/black'
+
 " All languages syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
+
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -31,6 +36,8 @@ Plug 'hrsh7th/vim-vsnip'
 
 " Pretty
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'mhartington/formatter.nvim'
+
 call plug#end()
 
 colorscheme atom-dark
@@ -109,8 +116,8 @@ set grepformat^=%f:%l:%c:%m
 
 
 lua << EOF
--- Bufferline
 require("bufferline").setup{}
+require('gitsigns').setup()
 EOF
 
 set rtp+=/usr/local/opt/fzf

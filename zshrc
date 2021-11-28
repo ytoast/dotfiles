@@ -33,6 +33,7 @@ export PATH="/usr/local/opt/python@3.7/bin:$PATH"
 . $HOME/.asdf/completions/asdf.bash
 
 export PATH="$HOME/.jenv/bin:$PATH"
+export PATH="$HOME/.asdf/installs/python/3.9.6/bin:$PATH"
 eval "$(jenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
