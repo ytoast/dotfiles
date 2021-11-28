@@ -10,6 +10,7 @@ Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-commentary'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua',
 Plug 'Yggdroot/indentLine'
 Plug 'akinsho/bufferline.nvim'
 " Python
@@ -18,9 +19,18 @@ Plug 'psf/black'
 " All languages syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
-
 " LSP
 Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
+" Pretty
+Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
 
 colorscheme atom-dark
@@ -43,7 +53,7 @@ nnoremap <S-Tab> :bprev!<CR>
 nnoremap <leader>bq :bp <bar> bd! #<cr>
 
 "close all open buffers
-nnoremap <leader>bqa :%bd!<cr>
+" nnoremap <leader>bqa :%bd!<cr>
 
 nmap <leader>vi :tabedit ~/.vimrc<cr>             " Edit your vimrc in a new tab
 nmap <leader>so :source $MYVIMRC<cr>              " Source (reload) your vimrc
@@ -112,18 +122,55 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
--- LSP
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.pylsp.setup{}
--- Telescope
-require('telescope').setup{
+
+--Tree
+require'nvim-tree'.setup {
+  disable_netrw       = true,
+  hijack_netrw        = true,
+  open_on_setup       = false,
+  ignore_ft_on_setup  = {},
+  auto_close          = false,
+  open_on_tab         = false,
+  hijack_cursor       = false,
+  update_cwd          = false,
+  update_to_buf_dir   = {
+    enable = true,
+    auto_open = true,
+  },
+  diagnostics = {
+    enable = false,
+    icons = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    }
+  },
+  update_focused_file = {
+    enable      = false,
+    update_cwd  = false,
+    ignore_list = {}
+  },
+  system_open = {
+    cmd  = nil,
+    args = {}
+  },
+  filters = {
+    dotfiles = false,
+    custom = {}
+  },
+  view = {
+    width = 30,
+    height = 30,
+    hide_root_folder = false,
+    side = 'left',
+    auto_resize = false,
+    mappings = {
+      custom_only = false,
+      list = {}
+    }
+  }
 }
 EOF
-
-" Treesitter
-nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files <cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 set rtp+=/usr/local/opt/fzf
