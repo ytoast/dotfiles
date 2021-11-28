@@ -4,3 +4,4 @@ source ~/.vimrc
 
 lua require('lsp_config')
 lua require('telescope_config')
+lua require('treesitter')
