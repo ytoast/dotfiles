@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 " Colorschemes
 Plug 'gosukiwi/vim-atom-dark'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -40,7 +41,11 @@ Plug 'mhartington/formatter.nvim'
 
 call plug#end()
 
-colorscheme atom-dark
+" colorscheme atom-dark
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
+colorscheme tokyonight
 syntax on
 
 " MAPPING
