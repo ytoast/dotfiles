@@ -10,6 +10,7 @@ export PATH="/usr/local/opt/libpq/bin:$PATH"
 plugins=(
   git
   zsh-autosuggestions
+  asdf
 )
 
 # Load the shell dotfiles, and then some:
