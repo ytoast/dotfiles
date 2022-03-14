@@ -38,6 +38,7 @@ Plug 'hrsh7th/vim-vsnip'
 " Pretty
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'mhartington/formatter.nvim'
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
@@ -126,3 +127,10 @@ require('gitsigns').setup()
 EOF
 
 set rtp+=/usr/local/opt/fzf
+
+" To move to lua
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)

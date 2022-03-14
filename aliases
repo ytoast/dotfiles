@@ -2,7 +2,7 @@ alias gcmm='gco gcp-main'
 alias github='cd ~/Github'
 alias tf='terraform'
 alias vi='nvim'
-alias ls="exa --icons --oneline --binary"
+alias ls="exa --oneline --binary"
 alias l="ls -al"
 alias ll="ls -l -g --icons --git --modified --sort=mod --reverse"
 alias lll="ll --accessed --created"
