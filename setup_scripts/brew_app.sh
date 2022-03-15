@@ -31,6 +31,7 @@ brew install tig
 brew install tmate
 brew install tmuxinator
 brew install yq
+brew intall npm
 
 # Install mac apps
 # mas signin mas@example.com
@@ -44,3 +45,10 @@ mas install 937984704     # Amphetamine
 # Tap
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
+
+# fzf keybindings
+$(brew --prefix)/opt/fzf/install
+
+# refactor this to another file
+# install pyright
+npm i -g pyright
