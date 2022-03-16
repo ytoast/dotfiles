@@ -4,21 +4,21 @@
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install ohmyzsh - Do this with care
-# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# cp ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+cp ~/.zshrc.pre-oh-my-zsh ~/.zshrc
 
 # Install ohmyzsh plugins
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
 # Install brew apps
 # ./brew_app.sh
 
 # Needed to create links
-sudo chown -R $(whoami) /usr/local/*
+# sudo chown -R $(whoami) /usr/local/*
 
-brew link starship
-brew link zoxide
+# brew link starship
+# brew link zoxide
 
 # Mac defaults
 # sh ~/dotfiles/macos.sh
