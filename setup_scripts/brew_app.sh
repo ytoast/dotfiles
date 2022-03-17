@@ -30,6 +30,7 @@ brew install --cask font-hack-nerd-font
 # brew install tig
 # brew install tmate
 brew install tmuxinator
+brew install ykman
 # brew install yq
 # brew intall npm
 
@@ -52,3 +53,6 @@ $(brew --prefix)/opt/fzf/install
 # refactor this to another file
 # install pyright
 npm i -g pyright
+
+# disable OTP option
+ykman config mode FIDO+CCID
