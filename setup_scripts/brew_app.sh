@@ -31,6 +31,7 @@ brew install --cask font-hack-nerd-font
 # brew install tmate
 brew install tmuxinator
 brew install ykman
+brew install fx
 # brew install yq
 # brew intall npm
 

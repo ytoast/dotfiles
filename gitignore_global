@@ -1,3 +1,10 @@
 **/playground/
 **/__pycache__/
 *.pyc
+.DS_Store
+.env
+.env-yaml
+.next/
+.env.production
+secrets/
+ftx_api_key.json

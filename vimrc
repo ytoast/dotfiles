@@ -105,6 +105,7 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 autocmd BufWritePre * :%s/\s\+$//e   " Remove trailing whitespaces
+autocmd FileType sql setlocal commentstring=--\ %s
 
 " Copy to system clipboard
 vnoremap <C-c> "+y
@@ -134,3 +135,6 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+let g:vim_json_conceal=0
+let g:vim_md_conceal=0

@@ -57,7 +57,12 @@ window.opacity: 0.8
 
 cursor:
   # Block Underline or Beam
-  style: Block
+  style:
+    shape: Beam
+    blinking: Always
+  blink_interval: 500
+  unfocused_hollow: true
+  thickness: 0.15
 
 # Shell
 shell:
