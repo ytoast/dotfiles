@@ -79,3 +79,4 @@ lsp.pyright.setup{
   on_attach=custom_attach,
   capabilities=capabilities,
 }
+lsp.eslint.setup{}

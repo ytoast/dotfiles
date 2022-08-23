@@ -14,3 +14,10 @@
 
 [alias]
   coauthor = "!f() { git commit --amend -m \"$(git log -1 --pretty=%B)\" -m \"Co-authored-by: $1\"; }; f"
+  mwps = "!f() { git push -o merge_request.create -o merge_request.target=master; }; f"
+  gcd = "git checkout develop"
+[pack]
+	windowMemory = 100m
+	SizeLimit = 100m
+	threads = 1
+	window = 0

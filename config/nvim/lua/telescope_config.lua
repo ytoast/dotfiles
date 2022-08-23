@@ -1,5 +1,5 @@
 local telescope = require('telescope')
-telescope.setup {}
+telescope.setup {defaults = { file_ignore_patterns = {"node_modules"} }}
 
 _G.with_preview = {
   border = true,
@@ -12,8 +12,8 @@ _G.with_preview = {
   sorting_strategy = "ascending",
   find_command = {
     'rg',
-    '--ignore',
-    '--hidden',
+    -- '--ignore',
+    -- '--hidden',
     '--files',
   },
 }

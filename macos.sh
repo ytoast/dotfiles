@@ -8,6 +8,7 @@ defaults write com.apple.dock "orientation" -string "left" && killall Dock
 defaults write com.apple.dock autohide -bool true
 
 # Save screenshots to the desktop
+mkdir "$HOME/Desktop/Screenshots"
 defaults write com.apple.screencapture location -string "$HOME/Desktop/Screenshots"
 
 # Trackpad: enable tap to click for this user and for the login screen
