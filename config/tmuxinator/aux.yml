@@ -53,7 +53,23 @@ windows:
         -
         -
 
-  - main:
+  - etl_services:
+      root: ~/Github/tpc_aux_services/etl_services
+      layout: e294,384x99,0,0{257x99,0,0,6,126x99,258,0[126x49,258,0,7,126x49,258,50,8]}
+      panes:
+        - nvim
+        -
+        -
+
+  - dags:
+      root: ~/Github/tpc_aux_services/dags
+      layout: e294,384x99,0,0{257x99,0,0,6,126x99,258,0[126x49,258,0,7,126x49,258,50,8]}
+      panes:
+        - nvim
+        -
+        -
+
+  - misc:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
@@ -63,10 +79,5 @@ windows:
         -
         -
 
-  - etl_services:
-      root: ~/Github/tpc_aux_services/etl_services
-      layout: e294,384x99,0,0{257x99,0,0,6,126x99,258,0[126x49,258,0,7,126x49,258,50,8]}
-      panes:
-        - nvim
-        - cd etl_services
-        - nvim
+# Notes:
+# To get layout: tmux list-windows

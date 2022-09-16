@@ -12,4 +12,10 @@ bt-defi-api.json
 .env-dev
 .env.development
 .secrets.json
+
+/* Manual */
 hc-tx-alchemy-node-key.json
+coingecko.json
+uniswap.json
+testing.ipynb
+oneinch.json
