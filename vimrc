@@ -16,6 +16,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'akinsho/bufferline.nvim'
 Plug 'phaazon/hop.nvim'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'L3MON4D3/LuaSnip'
 
 " Python
 Plug 'deoplete-plugins/deoplete-jedi'
@@ -24,6 +25,7 @@ Plug 'psf/black'
 " All languages syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
+Plug 'tomlion/vim-solidity'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
