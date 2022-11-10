@@ -44,6 +44,12 @@ Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
+" To get colorscheme to appear correctly
+if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
 " colorscheme atom-dark
 let g:tokyonight_style = "night"
 let g:tokyonight_italic_functions = 1
@@ -84,6 +90,7 @@ set smarttab   " Be smart when using tabs
 set shiftwidth=2
 set tabstop=2
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
+set nocompatible
 
 " Linebreak on 500 characters
 set lbr
