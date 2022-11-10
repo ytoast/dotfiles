@@ -29,3 +29,5 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
+
+defaults write -g ApplePressAndHoldEnabled -bool false
