@@ -45,6 +45,10 @@ brew install fd
 # mas install 1510445899    # Meeter
 # mas install 937984704     # Amphetamine
 
+# Git
+# brew tap microsoft/git
+# brew install --cask git-credential-manager-core
+
 # Tap
 # brew tap hashicorp/tap
 # brew install hashicorp/tap/terraform
