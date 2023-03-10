@@ -12,6 +12,8 @@ bt-defi-api.json
 .env-dev
 .env.development
 .secrets.json
+.vscode/
+node_modules/
 
 /* Manual */
 hc-tx-alchemy-node-key.json
@@ -23,3 +25,4 @@ f1-accounting.json
 test.py
 apeboard_curl_commands.txt
 test.ipynb
+debug/

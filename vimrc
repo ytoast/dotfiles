@@ -129,6 +129,7 @@ set scrolloff=4             " Keep at least 4 lines below cursor
 set signcolumn=yes          " always show signcolumns
 set grepprg=rg\ --vimgrep   " Use RipGrep instead of grep
 set grepformat^=%f:%l:%c:%m
+set mouse=c
 
 
 lua << EOF
