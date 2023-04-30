@@ -7,4 +7,5 @@ ln -sf ~/dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/gitignore_global ~/.gitignore_global
 ln -sf ~/dotfiles/vimrc ~/.vimrc
 ln -sf ~/dotfiles/alacritty.yml ~/.alacritty.yml
+ln -sf ~/dotfiles/config ~/.config
 # ln -sf ~/dotfiles/ignore/exports ~/.ignore/exports

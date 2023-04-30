@@ -1,7 +1,6 @@
 export ZSH="/Users/bthng/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
-source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 export AIRFLOW_BUSINESS_UNIT="pandata"
@@ -10,10 +9,13 @@ export PATH="/usr/local/opt/libpq/bin:$PATH"
 autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit
 
+source $ZSH/oh-my-zsh.sh
+
 plugins=(
   git
   zsh-autosuggestions
   asdf
+  virtualenv
 )
 
 # Load the shell dotfiles, and then some:
