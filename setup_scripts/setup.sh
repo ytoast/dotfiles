@@ -1,11 +1,10 @@
-# Install Brew
-# curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
-# echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/bthng/.zprofile
+# Install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/brenda/.zprofile
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install ohmyzsh - Do this with care
-# curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-# cp ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Install ohmyzsh plugins
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
