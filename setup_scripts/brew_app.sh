@@ -15,6 +15,7 @@ brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 
 # Packages
+brew install starship
 brew install entr
 brew install exa
 brew install fzf
@@ -34,7 +35,8 @@ brew install ykman
 brew install fx
 brew install fd
 brew install yq
-brew intall npm
+brew install npm
+brew install zoxide
 
 # Install mac apps
 # mas signin mas@example.com
@@ -42,8 +44,9 @@ mas install 1480933944  # Vimari
 mas install 747648890   # Telegram
 mas install 803453959   # Slack
 # mas install 1306893526    # Sorted3
-mas install 1510445899    # Meeter
-mas install 937984704     # Amphetamine
+mas install 1510445899  # Meeter
+mas install 937984704   # Amphetamine
+mas install 1569813296  # 1Password
 
 # Git
 brew tap microsoft/git
