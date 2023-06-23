@@ -1,27 +1,30 @@
 # Install brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#
+# Need to add homebrew folder to PATH on Apple Silicon machines
+# homebrew installs itself in `opt/homebrew` instead of `/usr/local/bin` on the silicon machine
 # echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/brenda/.zprofile
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install ohmyzsh - Do this with care
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Install ohmyzsh plugins
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
 # Install apps
-# ./brew_app.sh
-# ./npm_app.sh
+./brew_app.sh
+./npm_app.sh
 
 # Needed to create links
-# sudo chown -R $(whoami) /usr/local/*
+sudo chown -R $(whoami) /usr/local/*
 
-# brew link starship
-# brew link zoxide
+brew link starship
+brew link zoxide
 
 # Mac defaults
-# sh ~/dotfiles/macos.sh
+sh ~/dotfiles/macos.sh
 
 
 # Install AWS CLI
@@ -29,4 +32,4 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # sudo installer -pkg AWSCLIV2.pkg -target /
 
 # Yubikeys: disable OTP option
-# ykman config mode FIDO+CCID
+ykman config mode FIDO+CCID
