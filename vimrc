@@ -9,6 +9,8 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " Colorschemes
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'danilo-augusto/vim-afterglow'
+Plug 'lifepillar/vim-solarized8'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -58,6 +60,7 @@ if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
 endif
 
 " colorscheme atom-dark
+" colorscheme afterglow
 let g:tokyonight_style = "night"
 let g:tokyonight_italic_functions = 1
 let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
