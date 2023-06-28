@@ -13,6 +13,7 @@ brew install --cask rectangle
 brew install --cask alacritty
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
+brew install --cask docker
 
 # Packages
 brew install starship
