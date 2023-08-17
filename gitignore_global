@@ -14,6 +14,7 @@ bt-defi-api.json
 .secrets.json
 .vscode/
 node_modules/
+.tool-versions
 
 /* Manual */
 hc-tx-alchemy-node-key.json
@@ -26,3 +27,5 @@ test.py
 apeboard_curl_commands.txt
 test.ipynb
 debug/
+.idea/*
+

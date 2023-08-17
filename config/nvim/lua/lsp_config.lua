@@ -97,10 +97,23 @@ cmp.setup.cmdline(':', {
 
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- Infers the full executable path based on shell command name
+local read_exec_path = function(exec_name)
+    local handle = io.popen("which " .. exec_name)
+    local result = handle:read("*a"):gsub("\n", "")
+    handle:close()
+    return result
+end
 
 -- Set up pyright
 lsp.pyright.setup{
   on_attach=custom_attach,
   capabilities=capabilities,
+  settings = {
+      python = {
+          -- Use the locally available python executable. Enables using pyright from an activated venv.
+          pythonPath = read_exec_path("python"),
+      },
+  },
 }
 lsp.eslint.setup{}

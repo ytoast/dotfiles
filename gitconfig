@@ -3,8 +3,10 @@
 
 [user]
 	; email = thngktb@gmail.com
-  email = brenda@polychain.engineering
+  ; email = brenda@polychain.engineering
+  email = brenda.thng@messari.io
 	name = Brenda Thng
+	signingkey = /Users/bthng/.ssh/id_ed25519.pub
 
 [core]
   excludesfile = ~/.gitignore_global
@@ -25,3 +27,7 @@
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh

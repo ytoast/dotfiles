@@ -19,8 +19,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-commentary'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua',
+Plug 'nvim-tree/nvim-web-devicons' " optional
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'Yggdroot/indentLine'
 Plug 'akinsho/bufferline.nvim'
 Plug 'phaazon/hop.nvim'
@@ -50,6 +50,12 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'mhartington/formatter.nvim'
 Plug 'junegunn/vim-easy-align'
+
+" AI
+Plug 'github/copilot.vim'
+
+" DBT
+Plug 'PedramNavid/dbtpal'
 
 call plug#end()
 
