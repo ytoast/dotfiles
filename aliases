@@ -21,3 +21,4 @@ alias start-td-agent='sudo launchctl load /Library/LaunchDaemons/td-agent.plist'
 alias stop-td-agent='sudo launchctl unload /Library/LaunchDaemons/td-agent.plist'
 alias log-td-agent='tail -f /var/log/td-agent/td-agent.log'
 alias mux=tmuxinator
+alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql

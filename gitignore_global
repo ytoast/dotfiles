@@ -28,4 +28,5 @@ apeboard_curl_commands.txt
 test.ipynb
 debug/
 .idea/*
+.nux/
 

@@ -14,6 +14,7 @@ brew install --cask alacritty
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 brew install --cask docker
+brew install --cask snowflake-snowsql
 
 # Packages
 brew install starship
