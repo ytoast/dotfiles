@@ -1,4 +1,5 @@
 alias gcmm='gco gcp-main'
+alias gcc="SKIP=sqlfluff-fix git commit --verbose"
 alias github='cd ~/Github'
 alias tf='terraform'
 alias vi='nvim'
