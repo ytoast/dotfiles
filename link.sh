@@ -4,6 +4,7 @@ ln -sf ~/dotfiles/tmate.conf ~/.tmate.conf
 ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -sf ~/dotfiles/zprofile ~/.zprofile
 ln -sf ~/dotfiles/aliases ~/.aliases
+ln -sf ~/dotfiles/functions ~/.functions
 ln -sf ~/dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/gitignore_global ~/.gitignore_global
 ln -sf ~/dotfiles/vimrc ~/.vimrc
