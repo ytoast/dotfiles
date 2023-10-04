@@ -49,25 +49,25 @@ windows:
       root: ~/Github/dagster/<%= @settings["workspace"] %>
       layout: e294,384x99,0,0{257x99,0,0,6,126x99,258,0[126x49,258,0,7,126x49,258,50,8]}
       panes:
-        - source ~/.virtualenvs/dagster/bin/activate && export PYTHONPATH=$(pwd) && nvim
-        -
-        -
+        - setup_dagster && nvim
+        - setup_dagster
+        - setup_dagster
 
   - dagster2:
       root: ~/Github/dagster_clone/dagster
       layout: e294,384x99,0,0{257x99,0,0,6,126x99,258,0[126x49,258,0,7,126x49,258,50,8]}
       panes:
-        - source ~/.virtualenvs/dagster/bin/activate && export PYTHONPATH=$(pwd) && nvim
-        -
-        -
+        - setup_dagster && nvim
+        - setup_dagster
+        - setup_dagster
 
   - infra:
       root: ~/Github/infrastructure
-      layout: e294,384x99,0,0{257x99,0,0,6,126x99,258,0[126x49,258,0,7,126x49,258,50,8]}
+      layout: main-vertical
       panes:
-        - nvim
         -
-        -
+        - k9s --context prod --namespace datascience
+        - k9s --context stage --namespace datascience
 
   - misc:
       layout: main-vertical
@@ -76,8 +76,8 @@ windows:
       # synchronize: after
       panes:
         -
-        - k9s --context prod --namespace datascience
-        - k9s --context stage --namespace datascience
+        -
+        -
 
 # Notes:
 # To get layout: tmux list-windows
