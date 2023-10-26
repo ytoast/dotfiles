@@ -39,6 +39,7 @@ brew install fd
 brew install yq
 brew install npm
 brew install zoxide
+brew install git-delta
 
 # Install mac apps
 # mas signin mas@example.com

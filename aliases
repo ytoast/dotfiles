@@ -24,3 +24,4 @@ alias log-td-agent='tail -f /var/log/td-agent/td-agent.log'
 alias mux=tmuxinator
 alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
 alias setup_dagster="source ~/.virtualenvs/dagster/bin/activate && export PYTHONPATH=$(pwd)"
+alias gs="git -c delta.side-by-side=true"

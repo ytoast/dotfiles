@@ -18,6 +18,7 @@
   coauthor = "!f() { git commit --amend -m \"$(git log -1 --pretty=%B)\" -m \"Co-authored-by: $1\"; }; f"
   mwps = "!f() { git push -o merge_request.create -o merge_request.target=master; }; f"
   gcd = "git checkout develop"
+  diffs = "-c delta.side-by-side=true diff"
 [pack]
 	windowMemory = 100m
 	SizeLimit = 100m
@@ -31,3 +32,15 @@
 	gpgsign = true
 [gpg]
 	format = ssh
+
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
