@@ -24,6 +24,11 @@ for file in ~/.{aliases,ignores/exports,functions}; do
 done;
 unset file;
 
+# Add git aliases from gitconfig
+for al in `git --list-cmds=alias`; do
+    alias g$al="git $al"
+done
+
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 

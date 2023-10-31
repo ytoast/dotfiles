@@ -10,6 +10,7 @@
 
 [core]
   excludesfile = ~/.gitignore_global
+  pager = delta
 
 [pull]
   ff = only
@@ -19,6 +20,26 @@
   mwps = "!f() { git push -o merge_request.create -o merge_request.target=master; }; f"
   gcd = "git checkout develop"
   diffs = "-c delta.side-by-side=true diff"
+  s = status -s
+  co = checkout
+  cob = checkout -b
+  # list branches sorted by last modified
+  b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+  # list aliases
+  la = "!git config -l | grep alias | cut -c 7-"
+	prev = checkout @{-1}
+
+  # rebase on main origin branch
+  rom = !git fetch --all && git rebase $(git rev-parse --abbrev-ref origin/HEAD)
+  # reset the branch to the distant one
+  rh = !git fetch && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
+  # interactive rebasing
+  ri = "!f() { git rebase -i HEAD~$1; }; f"
+
+  # view merged branches - to be deleted
+  gone="! git branch -vv | grep ': gone]' "
+
 [pack]
 	windowMemory = 100m
 	SizeLimit = 100m
@@ -33,14 +54,14 @@
 [gpg]
 	format = ssh
 
-[core]
-    pager = delta
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 [delta]
-    navigate = true    # use n and N to move between diff sections
-    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  navigate = true    # use n and N to move between diff sections
+  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  hyperlinks = false    # set to true to link to commits
+  side-by-side = true
 [merge]
-    conflictstyle = diff3
+  conflictstyle = diff3
 [diff]
-    colorMoved = default
+  colorMoved = default

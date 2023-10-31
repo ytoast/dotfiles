@@ -11,6 +11,8 @@ ftx_api_key.json
 bt-defi-api.json
 .env-dev
 .env.development
+.env.prod
+.env.stage
 .secrets.json
 .vscode/
 node_modules/
@@ -30,3 +32,4 @@ debug/
 .idea/*
 .nux/
 
+scratch_pad.py
