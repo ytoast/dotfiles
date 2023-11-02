@@ -47,19 +47,21 @@ root: ~/Github/dagster
 windows:
   - workspace:
       root: ~/Github/dagster/<%= @settings["workspace"] %>
-      layout: e294,384x99,0,0{257x99,0,0,6,126x99,258,0[126x49,258,0,7,126x49,258,50,8]}
+      layout: 77d7,548x64,0,0{77x64,0,0[77x24,0,0,73,77x27,0,25,77,77x11,0,53,78],470x64,78,0,79}
       panes:
+        - setup_dagster
+        - setup_dagster
+        - setup_dagster
         - setup_dagster && nvim
-        - setup_dagster
-        - setup_dagster
 
   - dagster2:
       root: ~/Github/dagster_clone/dagster
-      layout: e294,384x99,0,0{257x99,0,0,6,126x99,258,0[126x49,258,0,7,126x49,258,50,8]}
+      layout: 77d7,548x64,0,0{77x64,0,0[77x24,0,0,73,77x27,0,25,77,77x11,0,53,78],470x64,78,0,79}
       panes:
+        - setup_dagster
+        - setup_dagster
+        - setup_dagster
         - setup_dagster && nvim
-        - setup_dagster
-        - setup_dagster
 
   - infra:
       root: ~/Github/infrastructure
@@ -81,3 +83,4 @@ windows:
 
 # Notes:
 # To get layout: tmux list-windows
+# tmux list-windows -F "#{window_active} #{window_layout}" | grep "^1" | cut -d " " -f 2
