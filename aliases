@@ -25,4 +25,5 @@ alias mux=tmuxinator
 alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
 alias setup_dagster="source ~/.virtualenvs/dagster/bin/activate && export PYTHONPATH=$(pwd)"
 # delete merged branches
-gbgone="! git branch -vv | grep ': gone]' | grep -v '\*' | awk '{ print $1; }' | xargs -r git branch -D"
+alias begone="! git branch -vv | grep ': gone]' | grep -v '\*' | awk '{ print $1; }' | xargs -r git branch -D"
+alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
