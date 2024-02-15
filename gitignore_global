@@ -11,6 +11,7 @@ ftx_api_key.json
 bt-defi-api.json
 .env-dev
 .env.development
+.env.dev
 .env.prod
 .env.stage
 .secrets.json
@@ -33,3 +34,5 @@ debug/
 .nux/
 
 scratch_pad.py
+secret.sh
+to_delete/

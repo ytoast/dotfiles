@@ -11,3 +11,5 @@ ln -sf ~/dotfiles/vimrc ~/.vimrc
 ln -sf ~/dotfiles/alacritty.yml ~/.alacritty.yml
 ln -sf ~/dotfiles/config ~/.config
 # ln -sf ~/dotfiles/ignore/exports ~/.ignore/exports
+#
+ln -sf ~/dotfiles/config/hammerspoon ~/.hammerspoon

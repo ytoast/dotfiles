@@ -2,11 +2,12 @@
 	defaultBranch = main
 
 [user]
-	; email = thngktb@gmail.com
-  ; email = brenda@polychain.engineering
-  email = brenda.thng@messari.io
+	email = thngktb@gmail.com
 	name = Brenda Thng
 	signingkey = /Users/bthng/.ssh/id_ed25519.pub
+
+[includeIf "gitdir:~/github/messari/"]
+    path = ~/github/messari/.gitconfig
 
 [core]
   excludesfile = ~/.gitignore_global
@@ -39,6 +40,7 @@
 
   # view merged branches - to be deleted
   gone="! git branch -vv | grep ': gone]' "
+  cleanup="! git branch --merged | egrep -v master"
 
 [pack]
 	windowMemory = 100m
@@ -46,7 +48,7 @@
 	threads = 1
 	window = 0
 [credential]
-	helper = /usr/local/share/gcm-core/git-credential-manager
+	helper = cache
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [commit]

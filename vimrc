@@ -26,6 +26,7 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'phaazon/hop.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'L3MON4D3/LuaSnip'
+Plug 'kdheepak/lazygit.nvim'
 
 " Python
 Plug 'deoplete-plugins/deoplete-jedi'
@@ -66,11 +67,11 @@ if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
 endif
 
 " colorscheme atom-dark
-" colorscheme afterglow
 let g:tokyonight_style = "night"
 let g:tokyonight_italic_functions = 1
 let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
 colorscheme tokyonight
+colorscheme afterglow
 syntax on
 
 " MAPPING
@@ -92,8 +93,10 @@ nnoremap <leader>bq :bp <bar> bd! #<cr>
 "close all open buffers
 " nnoremap <leader>bqa :%bd!<cr>
 
+nnoremap <silent> <leader>gg :LazyGit<CR>
+
 nmap <leader>vi :tabedit ~/.vimrc<cr>             " Edit your vimrc in a new tab
-nmap <leader>so :source $MYVIMRC<cr>              " Source (reload) your vimrc
+nmap <leader>so :source ~/.vimrc<cr>              " Source (reload) your vimrc
 
 set nobackup
 set nowritebackup

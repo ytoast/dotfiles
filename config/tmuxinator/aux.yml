@@ -46,7 +46,7 @@ root: ~/Github/dagster
 
 windows:
   - workspace:
-      root: ~/Github/dagster/<%= @settings["workspace"] %>
+      root: ~/Github/messari/dagster/<%= @settings["workspace"] %>
       layout: 77d7,548x64,0,0{77x64,0,0[77x24,0,0,73,77x27,0,25,77,77x11,0,53,78],470x64,78,0,79}
       panes:
         - setup_dagster
@@ -55,7 +55,7 @@ windows:
         - setup_dagster && nvim
 
   - dagster2:
-      root: ~/Github/dagster_clone/dagster
+      root: ~/Github/messari/dagster_clone/dagster
       layout: 77d7,548x64,0,0{77x64,0,0[77x24,0,0,73,77x27,0,25,77,77x11,0,53,78],470x64,78,0,79}
       panes:
         - setup_dagster
@@ -64,7 +64,7 @@ windows:
         - setup_dagster && nvim
 
   - infra:
-      root: ~/Github/infrastructure
+      root: ~/Github/messari/infrastructure
       layout: main-vertical
       panes:
         -

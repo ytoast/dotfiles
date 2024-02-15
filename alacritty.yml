@@ -57,7 +57,7 @@ colors:
     white:   '0xFFFAFA'
 
 # Make background slightly transparent
-window.opacity: 0.8
+window.opacity: 0.5
 
 cursor:
   # Block Underline or Beam

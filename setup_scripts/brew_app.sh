@@ -25,6 +25,7 @@ brew install gh
 brew install gnupg
 brew install jenv
 brew install jq
+brew install fd
 brew install mas
 brew install neovim
 brew install pre-commit
