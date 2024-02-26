@@ -19,7 +19,7 @@ brew install --cask snowflake-snowsql
 # Packages
 brew install starship
 brew install entr
-brew install exa
+brew install lsd
 brew install fzf
 brew install gh
 brew install gnupg
@@ -41,6 +41,7 @@ brew install yq
 brew install npm
 brew install zoxide
 brew install git-delta
+brew install 1password-cli
 
 # Install mac apps
 # mas signin mas@example.com

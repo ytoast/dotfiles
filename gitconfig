@@ -4,7 +4,8 @@
 [user]
 	email = thngktb@gmail.com
 	name = Brenda Thng
-	signingkey = /Users/bthng/.ssh/id_ed25519.pub
+  signingkey = /Users/bthng/.ssh/id_rsa.pub
+  # signingkey = /Users/bthng/.ssh/id_rsa.pub
 
 [includeIf "gitdir:~/github/messari/"]
     path = ~/github/messari/.gitconfig

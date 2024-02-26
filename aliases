@@ -1,11 +1,14 @@
 alias gcmm='gco gcp-main'
 alias gcc="SKIP=sqlfluff-fix git commit --verbose"
 alias github='cd ~/Github'
+alias gc='git commit --verbose -S'
+alias gc!='git commit --verbose --amend -S'
 alias tf='terraform'
 alias vi='nvim'
-alias ls="exa --oneline --binary"
+#alias ls="lsd --oneline --binary"
+alias ls="lsd"
 alias l="ls -al"
-alias ll="ls -l -g --icons --git --modified --sort=mod --reverse"
+alias ll="ls -l --gitsort --sort=time"
 alias lll="ll --accessed --created"
 alias lt="ll --tree --level=2"
 alias lla="lll -a"
