@@ -30,3 +30,6 @@ alias setup_dagster="source ~/.virtualenvs/dagster/bin/activate && export PYTHON
 # delete merged branches
 alias begone="! git branch -vv | grep ': gone]' | grep -v '\*' | awk '{ print $1; }' | xargs -r git branch -D"
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
+
+alias dcup='docker compose up'
+alias dcd='docker compose down'

@@ -14,6 +14,7 @@ bt-defi-api.json
 .env.dev
 .env.prod
 .env.stage
+.env.personal
 .secrets.json
 .vscode/
 node_modules/
@@ -38,3 +39,5 @@ secret.sh
 to_delete/
 notes.md
 .env.bk
+# airdrops_old/
+.env.temp

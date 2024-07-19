@@ -1,8 +1,12 @@
+-- General settings
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
+-- Required modules
 local lsp = require('lspconfig')
 local cmp = require('cmp')
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
+-- LSP functions
 local function preview_location_callback(_, result)
   if result == nil or vim.tbl_isempty(result) then
     return nil
@@ -15,49 +19,47 @@ function PeekDefinition()
   return vim.lsp.buf_request(0, 'textDocument/definition', params, preview_location_callback)
 end
 
+-- Custom LSP attach function
+local function custom_attach(client, bufnr)
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
 
-local custom_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  vim.keymap.set('n', '<space>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, bufopts)
-  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  -- LSP keymappings
+  local keymap_set = function(mode, lhs, rhs)
+    vim.keymap.set(mode, lhs, rhs, bufopts)
+  end
+
+  keymap_set('n', 'gD', vim.lsp.buf.declaration)
+  keymap_set('n', 'gd', vim.lsp.buf.definition)
+  keymap_set('n', 'K', vim.lsp.buf.hover)
+  keymap_set('n', 'gi', vim.lsp.buf.implementation)
+  keymap_set('n', '<C-k>', vim.lsp.buf.signature_help)
+  keymap_set('n', '<space>wa', vim.lsp.buf.add_workspace_folder)
+  keymap_set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder)
+  keymap_set('n', '<space>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end)
+  keymap_set('n', '<space>D', vim.lsp.buf.type_definition)
+  keymap_set('n', '<space>rn', vim.lsp.buf.rename)
+  keymap_set('n', '<space>ca', vim.lsp.buf.code_action)
+  keymap_set('n', 'gr', vim.lsp.buf.references)
+  keymap_set('n', '<space>f', vim.lsp.buf.formatting)
 end
 
-
+-- CMP setup
 cmp.setup {
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      vim.fn["vsnip#anonymous"](args.body)
     end,
   },
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
-    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ['<C-e>'] = cmp.mapping({
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    }),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-y>'] = cmp.config.disable,
+    ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = cmp.config.sources({
@@ -68,24 +70,21 @@ cmp.setup {
   })
 }
 
--- Set configuration for specific filetype.
+-- Filetype-specific configurations
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
-    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+    { name = 'cmp_git' },
   }, {
     { name = 'buffer' },
   })
 })
 
--- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+-- Cmdline configurations
 cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
+  sources = {{ name = 'buffer' }}
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
@@ -95,25 +94,28 @@ cmp.setup.cmdline(':', {
   })
 })
 
+-- LSP capabilities
+local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
--- Infers the full executable path based on shell command name
-local read_exec_path = function(exec_name)
+-- Utility function
+local function read_exec_path(exec_name)
     local handle = io.popen("which " .. exec_name)
     local result = handle:read("*a"):gsub("\n", "")
     handle:close()
     return result
 end
 
--- Set up pyright
-lsp.pyright.setup{
-  on_attach=custom_attach,
-  capabilities=capabilities,
+-- LSP setups
+lsp.eslint.setup {
+  capabilities = capabilities
+}
+
+lsp.pyright.setup {
+  on_attach = custom_attach,
+  capabilities = capabilities,
   settings = {
-      python = {
-          -- Use the locally available python executable. Enables using pyright from an activated venv.
-          pythonPath = read_exec_path("python"),
-      },
+    python = {
+      pythonPath = read_exec_path("python"),
+    },
   },
 }
-lsp.eslint.setup{}
