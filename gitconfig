@@ -2,7 +2,8 @@
 	defaultBranch = main
 
 [user]
-	email = thngktb@gmail.com
+	; email = thngktb@gmail.com
+	email = brenda.thng@messari.io
 	name = Brenda Thng
   signingkey = /Users/bthng/.ssh/id_rsa.pub
   # signingkey = /Users/bthng/.ssh/id_rsa.pub

@@ -5,6 +5,7 @@ ZSH_THEME="robbyrussell"
 export EDITOR='nvim'
 export AIRFLOW_BUSINESS_UNIT="pandata"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.10/libexec/openjdk.jdk/Contents/Home
 
 autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit

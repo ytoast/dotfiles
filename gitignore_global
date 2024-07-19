@@ -36,3 +36,5 @@ debug/
 scratch_pad.py
 secret.sh
 to_delete/
+notes.md
+.env.bk

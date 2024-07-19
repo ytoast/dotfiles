@@ -167,3 +167,4 @@ nmap ga <Plug>(EasyAlign)
 
 let g:vim_json_conceal=0
 let g:vim_md_conceal=0
+au BufReadPost *.jinja set syntax=sql
