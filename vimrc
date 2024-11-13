@@ -54,6 +54,7 @@ Plug 'junegunn/vim-easy-align'
 
 " AI
 Plug 'github/copilot.vim'
+Plug 'robitx/gp.nvim'
 
 " DBT
 Plug 'PedramNavid/dbtpal'

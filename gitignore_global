@@ -41,3 +41,5 @@ notes.md
 .env.bk
 # airdrops_old/
 .env.temp
+archive_brenda/
+dagster.yaml
