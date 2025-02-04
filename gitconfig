@@ -50,7 +50,7 @@
 	threads = 1
 	window = 0
 [credential]
-	helper = cache
+	helper = store
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [commit]

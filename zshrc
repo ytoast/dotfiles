@@ -32,11 +32,12 @@ done
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(direnv hook zsh)"
 
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="/usr/local/opt/python@3.7/bin:$PATH"
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+# . $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/completions/asdf.bash
 
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
