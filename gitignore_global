@@ -15,6 +15,7 @@ bt-defi-api.json
 .env.prod
 .env.stage
 .env.personal
+.env.copilot.dev
 .secrets.json
 .vscode/
 node_modules/

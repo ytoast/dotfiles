@@ -1,0 +1,1 @@
+command_timeout = 5000  # Increase from default 500ms to 5 seconds

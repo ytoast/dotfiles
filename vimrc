@@ -55,6 +55,11 @@ Plug 'junegunn/vim-easy-align'
 " AI
 Plug 'github/copilot.vim'
 Plug 'robitx/gp.nvim'
+Plug 'stevearc/dressing.nvim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'HakonHarnes/img-clip.nvim'
+Plug 'zbirenbaum/copilot.lua'
+Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': { -> avante#build() }, 'on': 'AvanteAsk' }
 
 " DBT
 Plug 'PedramNavid/dbtpal'

@@ -23,8 +23,8 @@ brew link zoxide
 sh ~/dotfiles/macos.sh
 
 # Install AWS CLI
-# curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-# sudo installer -pkg AWSCLIV2.pkg -target /
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /
 
 # Yubikeys: disable OTP option
 ykman config mode FIDO+CCID
