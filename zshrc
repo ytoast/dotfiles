@@ -13,10 +13,11 @@ autoload -U +X compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
 plugins=(
-  git
-  zsh-autosuggestions
   asdf
+  direnv
+  git
   virtualenv
+  zsh-autosuggestions
 )
 
 # Load the shell dotfiles, and then some:
@@ -44,9 +45,12 @@ eval "$(jenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/bthng/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/bthng/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/bthng/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/bthng/google-cloud-sdk/completion.zsh.inc'; fi
+
+
