@@ -73,10 +73,10 @@ if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
 endif
 
 " colorscheme atom-dark
-let g:tokyonight_style = "night"
-let g:tokyonight_italic_functions = 1
-let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
-colorscheme tokyonight
+" let g:tokyonight_style = "night"
+" let g:tokyonight_italic_functions = 1
+" let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
+" colorscheme tokyonight
 colorscheme afterglow
 syntax on
 

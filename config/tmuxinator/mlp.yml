@@ -53,7 +53,7 @@ windows:
         - setup_dagster
 
   - dagster2:
-      root: ~/Github/messari/dagster_clone/dagster
+      root: ~/Github/dagster
       layout: 445a,320x95,0,0{159x95,0,0,16,160x95,160,0[160x27,160,0,20,160x33,160,28,30,160x33,160,62,32]}
       panes:
         - setup_dagster && nvim
