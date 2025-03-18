@@ -44,3 +44,4 @@ notes.md
 .env.temp
 archive_brenda/
 dagster.yaml
+.cursorignore

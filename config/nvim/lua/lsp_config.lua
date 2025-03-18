@@ -26,8 +26,9 @@ local function custom_attach(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- LSP keymappings
-  local keymap_set = function(mode, lhs, rhs)
-    vim.keymap.set(mode, lhs, rhs, bufopts)
+  local keymap_set = function(mode, lhs, rhs, extra_opts)
+    local opts = vim.tbl_extend("force", bufopts, extra_opts or {})
+    vim.keymap.set(mode, lhs, rhs, opts)
   end
 
   keymap_set('n', 'gD', vim.lsp.buf.declaration)
