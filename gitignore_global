@@ -45,3 +45,4 @@ notes.md
 archive_brenda/
 dagster.yaml
 .cursorignore
+pipelines/core/extract/jobs/dbt_orphaned_table_audit
