@@ -20,6 +20,7 @@ plugins=(
   zsh-autosuggestions
 )
 
+
 # Load the shell dotfiles, and then some:
 for file in ~/.{aliases,ignores/exports,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
@@ -35,10 +36,10 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="/usr/local/opt/python@3.7/bin:$PATH"
-# . $HOME/.asdf/asdf.sh
-# . $HOME/.asdf/completions/asdf.bash
 
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
@@ -52,3 +53,4 @@ if [ -f '/Users/bthng/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/bthng/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/bthng/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/bthng/google-cloud-sdk/completion.zsh.inc'; fi
+
