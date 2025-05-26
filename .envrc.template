@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Get the current directory name for the virtual environment
+VENV_NAME=$(basename "$PWD")
+
+# Activate virtual environment if it exists
+if [ -d ~/.virtualenvs/$VENV_NAME ]; then
+    source ~/.virtualenvs/$VENV_NAME/bin/activate
+fi
+
+# Source .env file if it exists
+if [ -f .env ]; then
+    source .env
+fi 

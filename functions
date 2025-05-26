@@ -17,3 +17,22 @@ venv() {
   source ${VIRTUALENV_PATH}/bin/activate
   echo "virtualenv activated: ${VENV_NAME}"
 }
+
+# Quick activate function for existing projects
+activate() {
+  VENV_NAME=$(basename $PWD | tr . -)
+  VIRTUALENV_PATH=${HOME}/.virtualenvs/${VENV_NAME}
+  
+  if [ -d ${VIRTUALENV_PATH} ]; then
+    source ${VIRTUALENV_PATH}/bin/activate
+    echo "virtualenv activated: ${VENV_NAME}"
+  else
+    echo "Virtual environment ${VENV_NAME} not found in ~/.virtualenvs/"
+    return 1
+  fi
+  
+  if [ -f .env ]; then
+    source .env
+    echo ".env file sourced"
+  fi
+}
