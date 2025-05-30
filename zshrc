@@ -54,3 +54,7 @@ if [ -f '/Users/bthng/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/bthng/goo
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/bthng/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/bthng/google-cloud-sdk/completion.zsh.inc'; fi
 
+
+# Added by dbt installer
+export PATH="$PATH:/Users/bthng/.local/bin"
+

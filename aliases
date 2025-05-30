@@ -36,3 +36,6 @@ alias dcd='docker compose down'
 
 # Quick venv + .env activation
 alias vact='source ~/.virtualenvs/$(basename "$PWD")/bin/activate && source .env'
+
+# dbt aliases
+alias dbtf=/Users/bthng/.local/bin/dbt
