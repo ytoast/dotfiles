@@ -16,6 +16,7 @@ bt-defi-api.json
 .env.stage
 .env.personal
 .env.copilot.dev
+.env.mike
 .secrets.json
 .vscode/
 node_modules/
@@ -46,3 +47,5 @@ archive_brenda/
 dagster.yaml
 .cursorignore
 pipelines/core/extract/jobs/dbt_orphaned_table_audit
+
+.envrc
