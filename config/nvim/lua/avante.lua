@@ -2,9 +2,9 @@
 require('img-clip').setup ({
   -- use recommended settings from above
 })
-require('copilot').setup ({
+-- require('copilot').setup ({
   -- use recommended settings from above
-})
+-- })
 -- require('render-markdown').setup ({
 --   -- use recommended settings from above
 -- })
