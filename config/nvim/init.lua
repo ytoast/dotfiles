@@ -40,4 +40,4 @@ require('highlight')
 require('dbtpal')
 require('nvim_tree')
 require('keymaps')
--- require('avante')  -- Commented out as in the original init.vim
+require('avante')  -- Commented out as in the original init.vim

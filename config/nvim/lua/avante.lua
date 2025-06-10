@@ -9,6 +9,6 @@ require('copilot').setup ({
 --   -- use recommended settings from above
 -- })
 -- require('avante_lib').load()
-require('avante').setup ({
+-- require('avante').setup ({
   -- Your config here!
-})
+-- })
