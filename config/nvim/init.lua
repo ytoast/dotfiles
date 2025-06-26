@@ -18,6 +18,8 @@ end
 vim.api.nvim_set_keymap('n', '<C-b>', ':lua toggle_terminal()<CR>', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('t', '<C-b>', '<C-\\><C-n>:lua toggle_terminal()<CR>', {noremap = true, silent = false})
 
+vim.opt.termguicolors = true
+
 -- Set runtimepath
 vim.opt.runtimepath:prepend("~/.vim")
 vim.opt.runtimepath:append("~/.vim/after")
@@ -40,4 +42,7 @@ require('highlight')
 require('dbtpal')
 require('nvim_tree')
 require('keymaps')
+require('evergarden_config')
+require('bufferline_simple')
+
 require('avante')  -- Commented out as in the original init.vim

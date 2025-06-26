@@ -9,7 +9,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " Colorschemes
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'danilo-augusto/vim-afterglow'
+Plug 'everviolet/nvim', { 'as': 'evergarden' }
 Plug 'lifepillar/vim-solarized8'
 
 Plug 'nvim-lua/plenary.nvim'
@@ -77,7 +77,7 @@ endif
 " let g:tokyonight_italic_functions = 1
 " let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
 " colorscheme tokyonight
-colorscheme afterglow
+colorscheme evergarden
 syntax on
 
 " MAPPING
@@ -158,7 +158,6 @@ set mouse=c
 
 
 lua << EOF
-require("bufferline").setup{}
 require('gitsigns').setup()
 EOF
 
