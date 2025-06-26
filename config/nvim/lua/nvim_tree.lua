@@ -41,17 +41,9 @@ require'nvim-tree'.setup {
     dotfiles = true,
     custom = {}
   },
-  -- view = {
-  --   width = 30,
-  --   height = 30,
-  --   hide_root_folder = false,
-  --   side = 'left',
-  --   auto_resize = false,
-  --   mappings = {
-  --     custom_only = false,
-  --     list = {}
-  --   }
-  -- }
+  view = {
+    width = 45,
+  }
 }
 
 vim.api.nvim_set_keymap("n", "<leader>m", ":NvimTreeToggle<CR>", {silent = true, noremap = true})
