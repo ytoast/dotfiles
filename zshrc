@@ -46,7 +46,7 @@ eval "$(jenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-export PATH=$PATH:$(go env GOPATH)/bin
+# export PATH=$PATH:$(go env GOPATH)/bin
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/bthng/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/bthng/google-cloud-sdk/path.zsh.inc'; fi
@@ -57,4 +57,3 @@ if [ -f '/Users/bthng/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/bth
 
 # Added by dbt installer
 export PATH="$PATH:/Users/bthng/.local/bin"
-

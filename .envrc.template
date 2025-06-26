@@ -2,6 +2,7 @@
 
 # Get the current directory name for the virtual environment
 VENV_NAME=$(basename "$PWD")
+export PYTHONPATH="$PWD:$PYTHONPATH"
 
 # Activate virtual environment if it exists
 if [ -d ~/.virtualenvs/$VENV_NAME ]; then
@@ -11,4 +12,4 @@ fi
 # Source .env file if it exists
 if [ -f .env ]; then
     source .env
-fi 
+fi
