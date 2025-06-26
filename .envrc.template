@@ -9,7 +9,9 @@ if [ -d ~/.virtualenvs/$VENV_NAME ]; then
     source ~/.virtualenvs/$VENV_NAME/bin/activate
 fi
 
-# Source .env file if it exists
+# Export all variables from .env file if it exists
 if [ -f .env ]; then
+    set -a
     source .env
+    set +a
 fi
