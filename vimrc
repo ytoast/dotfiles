@@ -59,7 +59,8 @@ Plug 'stevearc/dressing.nvim'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'HakonHarnes/img-clip.nvim'
 Plug 'zbirenbaum/copilot.lua'
-Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': { -> avante#build() }, 'on': 'AvanteAsk' }
+Plug 'MeanderingProgrammer/render-markdown.nvim'
+Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
 " DBT
 Plug 'PedramNavid/dbtpal'

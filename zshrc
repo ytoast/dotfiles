@@ -57,3 +57,8 @@ if [ -f '/Users/bthng/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/bth
 
 # Added by dbt installer
 export PATH="$PATH:/Users/bthng/.local/bin"
+# Avante.nvim Environment Variables
+# Add your API keys below (uncomment and replace with actual keys):
+# export AVANTE_ANTHROPIC_API_KEY="sk-ant-api03-your-key-here"
+# export AVANTE_OPENAI_API_KEY="sk-your-openai-key-here"
+
