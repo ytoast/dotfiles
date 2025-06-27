@@ -61,6 +61,9 @@ Plug 'HakonHarnes/img-clip.nvim'
 Plug 'zbirenbaum/copilot.lua'
 Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': { -> avante#build() }, 'on': 'AvanteAsk' }
 
+" Terminal
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+
 " DBT
 Plug 'PedramNavid/dbtpal'
 
