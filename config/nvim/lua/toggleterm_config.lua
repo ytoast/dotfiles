@@ -66,6 +66,21 @@ vim.keymap.set('n', '<leader>t1', '<cmd>1ToggleTerm<cr>', { desc = 'Terminal 1' 
 vim.keymap.set('n', '<leader>t2', '<cmd>2ToggleTerm<cr>', { desc = 'Terminal 2' })
 vim.keymap.set('n', '<leader>t3', '<cmd>3ToggleTerm<cr>', { desc = 'Terminal 3' })
 
+-- Split horizontal terminals (side by side horizontally)
+vim.keymap.set('n', '<leader>th1', '<cmd>1ToggleTerm size=15 direction=horizontal<cr>', { desc = 'Horizontal Terminal 1' })
+vim.keymap.set('n', '<leader>th2', '<cmd>2ToggleTerm size=15 direction=horizontal<cr>', { desc = 'Horizontal Terminal 2' })
+vim.keymap.set('n', '<leader>th3', '<cmd>3ToggleTerm size=15 direction=horizontal<cr>', { desc = 'Horizontal Terminal 3' })
+
+-- Split vertical terminals (side by side vertically)
+vim.keymap.set('n', '<leader>tv1', '<cmd>1ToggleTerm size=60 direction=vertical<cr>', { desc = 'Vertical Terminal 1' })
+vim.keymap.set('n', '<leader>tv2', '<cmd>2ToggleTerm size=60 direction=vertical<cr>', { desc = 'Vertical Terminal 2' })
+
+-- Toggle multiple horizontal terminals at once
+vim.keymap.set('n', '<leader>ths', function()
+  vim.cmd('1ToggleTerm size=15 direction=horizontal')
+  vim.cmd('2ToggleTerm size=15 direction=horizontal')
+end, { desc = 'Split Horizontal Terminals' })
+
 -- Custom terminals for specific use cases
 local lazygit = Terminal:new({
   cmd = "lazygit",
@@ -90,6 +105,33 @@ function _lazygit_toggle()
 end
 
 vim.keymap.set('n', '<leader>lg', '<cmd>lua _lazygit_toggle()<CR>', { desc = 'LazyGit' })
+
+-- Custom split terminal functions
+function _G.open_split_horizontals()
+  -- Open two horizontal terminals stacked
+  vim.cmd('1ToggleTerm size=8 direction=horizontal')
+  vim.cmd('2ToggleTerm size=8 direction=horizontal')
+end
+
+function _G.open_split_verticals()
+  -- Open two vertical terminals side by side
+  vim.cmd('1ToggleTerm size=40 direction=vertical')
+  vim.cmd('2ToggleTerm size=40 direction=vertical')
+end
+
+function _G.open_mixed_terminals()
+  -- Open one horizontal and one vertical terminal
+  vim.cmd('1ToggleTerm size=15 direction=horizontal')
+  vim.cmd('2ToggleTerm size=60 direction=vertical')
+end
+
+-- Keymaps for split terminal layouts
+vim.keymap.set('n', '<leader>tsh', '<cmd>lua open_split_horizontals()<CR>', { desc = 'Split Horizontal Terminals' })
+vim.keymap.set('n', '<leader>tsv', '<cmd>lua open_split_verticals()<CR>', { desc = 'Split Vertical Terminals' })
+vim.keymap.set('n', '<leader>tsm', '<cmd>lua open_mixed_terminals()<CR>', { desc = 'Mixed Terminal Layout' })
+
+-- Close all terminals
+vim.keymap.set('n', '<leader>tca', '<cmd>ToggleTermToggleAll<CR>', { desc = 'Close All Terminals' })
 
 -- Terminal escape mapping - easier way to get out of terminal mode
 function _G.set_terminal_keymaps()
