@@ -34,4 +34,4 @@ format.setup(
   }
 )
 
-vim.api.nvim_set_keymap("n", "<leader>f", ":Format<CR>", {silent = true, noremap = true})
+-- Removed duplicate keybinding since <space>f is now handled in LSP config

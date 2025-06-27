@@ -43,7 +43,7 @@ local function custom_attach(client, bufnr)
   keymap_set('n', '<space>rn', vim.lsp.buf.rename)
   keymap_set('n', '<space>ca', vim.lsp.buf.code_action)
   keymap_set('n', 'gr', vim.lsp.buf.references)
-  keymap_set('n', '<space>f', function() vim.lsp.buf.format({ async = true }) end)
+  keymap_set('n', '<space>f', '<cmd>Format<cr>')
 end
 
 -- CMP setup
