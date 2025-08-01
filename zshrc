@@ -57,3 +57,5 @@ if [ -f '/Users/bthng/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/bth
 
 # Added by dbt installer
 export PATH="$PATH:/Users/bthng/.local/bin"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
