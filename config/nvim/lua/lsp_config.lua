@@ -120,3 +120,18 @@ lsp.pyright.setup {
     },
   },
 }
+
+-- Go LSP (gopls) setup
+lsp.gopls.setup {
+  on_attach = custom_attach,
+  capabilities = capabilities,
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
+}
