@@ -64,3 +64,5 @@ brew install hashicorp/tap/terraform
 
 # fzf keybindings
 $(brew --prefix)/opt/fzf/install
+
+brew install charmbracelet/tap/crush
