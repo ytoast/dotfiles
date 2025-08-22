@@ -5,8 +5,8 @@ vim.api.nvim_set_keymap('n', '<c-h>', ':wincmd h<CR>', {silent = true, noremap =
 vim.api.nvim_set_keymap('n', '<c-l>', ':wincmd l<CR>', {silent = true, noremap = true})
 
 
-vim.keymap.set('n', '<leader>h', ':vertical resize +10<CR>', { silent = true })
-vim.keymap.set('n', '<leader>l', ':vertical resize -10<CR>', { silent = true })
+vim.keymap.set('n', '<leader>l', ':vertical resize +10<CR>', { silent = true })
+vim.keymap.set('n', '<leader>h', ':vertical resize -10<CR>', { silent = true })
 
 -- Black formatter binding
 vim.keymap.set('n', '<space>b', ':Black<CR>', { silent = true, desc = 'Format with Black' })
