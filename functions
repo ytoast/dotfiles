@@ -3,26 +3,39 @@ venv() {
   VENV_NAME=$(basename $PWD | tr . -)
   VIRTUALENVS_DIR=${HOME}/.virtualenvs
   VIRTUALENV_PATH=${VIRTUALENVS_DIR}/${VENV_NAME}
-  PYTHON_BIN=${ASDF_DIR}/installs/python/${PYTHON_VERSION}/bin/python
-  if [ ! -z "$PYTHON_VERSION" ]; then
-    if [ ! -f ${PYTHON_BIN} ]; then
-      echo "Python version $PYTHON_VERSION is not installed."
-      return 1
-    fi
-    if [ ! -d ${VIRTUALENV_PATH} ]; then
-      echo "Creating virtualenv ${VENV_NAME}..."
-      ${PYTHON_BIN} -m venv ${VIRTUALENV_PATH}
-    fi
+
+  # Check if virtualenv already exists
+  if [ -d ${VIRTUALENV_PATH} ]; then
+    source ${VIRTUALENV_PATH}/bin/activate
+    echo "virtualenv activated: ${VENV_NAME}"
+    return 0
   fi
+
+  # If no version provided and venv doesn't exist, error out
+  if [ -z "$PYTHON_VERSION" ]; then
+    echo "Error: Virtualenv doesn't exist. Please provide a Python version to create it."
+    echo "Usage: venv <python-version>"
+    return 1
+  fi
+
+  PYTHON_BIN=${ASDF_DIR}/installs/python/${PYTHON_VERSION}/bin/python
+  if [ ! -f ${PYTHON_BIN} ]; then
+    echo "Python version $PYTHON_VERSION is not installed."
+    return 1
+  fi
+
+  echo "Creating virtualenv ${VENV_NAME}..."
+  ${PYTHON_BIN} -m venv ${VIRTUALENV_PATH}
   source ${VIRTUALENV_PATH}/bin/activate
   echo "virtualenv activated: ${VENV_NAME}"
 }
+
 
 # Quick activate function for existing projects
 activate() {
   VENV_NAME=$(basename $PWD | tr . -)
   VIRTUALENV_PATH=${HOME}/.virtualenvs/${VENV_NAME}
-  
+
   if [ -d ${VIRTUALENV_PATH} ]; then
     source ${VIRTUALENV_PATH}/bin/activate
     echo "virtualenv activated: ${VENV_NAME}"
@@ -30,7 +43,7 @@ activate() {
     echo "Virtual environment ${VENV_NAME} not found in ~/.virtualenvs/"
     return 1
   fi
-  
+
   if [ -f .env ]; then
     source .env
     echo ".env file sourced"

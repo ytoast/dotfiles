@@ -36,6 +36,7 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 
+export ASDF_DIR="${HOME}/.asdf"
 export PATH="$ASDF_DATA_DIR/shims:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
@@ -59,3 +60,4 @@ if [ -f '/Users/bthng/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/bth
 export PATH="$PATH:/Users/bthng/.local/bin"
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+export PATH="$HOME/.local/bin:$PATH"
