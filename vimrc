@@ -1,73 +1,4 @@
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-
-" Colorschemes
-Plug 'gosukiwi/vim-atom-dark'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'everviolet/nvim', { 'as': 'evergarden' }
-Plug 'lifepillar/vim-solarized8'
-
-Plug 'nvim-lua/plenary.nvim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-commentary'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-tree/nvim-web-devicons' " optional
-Plug 'nvim-tree/nvim-tree.lua'
-Plug 'Yggdroot/indentLine'
-Plug 'akinsho/bufferline.nvim'
-Plug 'phaazon/hop.nvim'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'L3MON4D3/LuaSnip'
-Plug 'kdheepak/lazygit.nvim'
-
-" Python
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'psf/black'
-
-" All languages syntax
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'christianchiarulli/nvcode-color-schemes.vim'
-Plug 'tomlion/vim-solidity'
-
-" LSP
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-
-" Pretty
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'mhartington/formatter.nvim'
-Plug 'junegunn/vim-easy-align'
-
-" AI
-Plug 'github/copilot.vim'
-Plug 'robitx/gp.nvim'
-Plug 'stevearc/dressing.nvim'
-Plug 'MunifTanjim/nui.nvim'
-Plug 'HakonHarnes/img-clip.nvim'
-Plug 'zbirenbaum/copilot.lua'
-Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': { -> avante#build() }, 'on': 'AvanteAsk' }
-
-" Terminal
-Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
-
-" DBT
-Plug 'PedramNavid/dbtpal'
-
-call plug#end()
+" Plugins are now managed by lazy.nvim in lua/plugins.lua
 
 " To get colorscheme to appear correctly
 if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
@@ -160,9 +91,6 @@ set grepformat^=%f:%l:%c:%m
 set mouse=c
 
 
-lua << EOF
-require('gitsigns').setup()
-EOF
 
 set rtp+=/usr/local/opt/fzf
 

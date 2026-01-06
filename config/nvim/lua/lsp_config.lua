@@ -2,7 +2,6 @@
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 -- Required modules
-local lsp = require('lspconfig')
 local cmp = require('cmp')
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
@@ -106,12 +105,12 @@ local function read_exec_path(exec_name)
     return result
 end
 
--- LSP setups
-lsp.eslint.setup {
-  capabilities = capabilities
-}
+-- LSP configurations using new vim.lsp.config API
+vim.lsp.config('eslint', {
+  capabilities = capabilities,
+})
 
-lsp.pyright.setup {
+vim.lsp.config('pyright', {
   on_attach = custom_attach,
   capabilities = capabilities,
   settings = {
@@ -119,10 +118,9 @@ lsp.pyright.setup {
       pythonPath = read_exec_path("python"),
     },
   },
-}
+})
 
--- Go LSP (gopls) setup
-lsp.gopls.setup {
+vim.lsp.config('gopls', {
   on_attach = custom_attach,
   capabilities = capabilities,
   settings = {
@@ -134,4 +132,9 @@ lsp.gopls.setup {
       gofumpt = true,
     },
   },
-}
+})
+
+-- Enable the configured LSP servers
+vim.lsp.enable('eslint')
+vim.lsp.enable('pyright')
+vim.lsp.enable('gopls')
