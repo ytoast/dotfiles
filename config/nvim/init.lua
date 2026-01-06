@@ -1,5 +1,3 @@
-vim.opt.termguicolors = true
-
 -- Set leader key before loading plugins
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -21,8 +19,8 @@ vim.opt.rtp:prepend(lazypath)
 -- Load plugins via lazy.nvim
 require("lazy").setup("plugins")
 
--- Source .vimrc for non-plugin settings
-vim.cmd('source ~/.vimrc')
+-- Load options and keymaps
+require('options')
 
 -- Require other Lua modules
 require('lsp_config')
