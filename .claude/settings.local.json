@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(defaults read:*)",
+      "Bash(nvim:*)",
+      "Bash(echo:*)",
+      "Bash(git restore:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(cat:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

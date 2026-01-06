@@ -3,3 +3,13 @@ ignore
 exports
 config/gcloud
 config/karabiner/automatic_backups
+
+# Secrets and tokens
+config/github-copilot/apps.json
+config/lightdash/
+
+# Cache and machine-specific
+config/configstore/
+config/uv/
+config/github-copilot/versions.json
+config/config
