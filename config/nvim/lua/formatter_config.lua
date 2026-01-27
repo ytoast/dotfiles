@@ -38,9 +38,62 @@ format.setup(
             stdin = true
           }
         end
+      },
+      javascript = {
+        function()
+          return {
+            exe = "prettier",
+            args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+            stdin = true
+          }
+        end
+      },
+      javascriptreact = {
+        function()
+          return {
+            exe = "prettier",
+            args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+            stdin = true
+          }
+        end
+      },
+      typescript = {
+        function()
+          return {
+            exe = "prettier",
+            args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+            stdin = true
+          }
+        end
+      },
+      typescriptreact = {
+        function()
+          return {
+            exe = "prettier",
+            args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+            stdin = true
+          }
+        end
+      },
+      json = {
+        function()
+          return {
+            exe = "prettier",
+            args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+            stdin = true
+          }
+        end
       }
     }
   }
 )
+
+-- Auto-format on save
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = {"*.js", "*.jsx", "*.ts", "*.tsx", "*.json", "*.py", "*.go", "*.lua", "*.tf"},
+  callback = function()
+    vim.cmd("FormatWrite")
+  end,
+})
 
 -- Removed duplicate keybinding since <space>f is now handled in LSP config
