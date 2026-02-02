@@ -1,17 +1,6 @@
 export ZSH="/Users/bthng/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
-
-export EDITOR='nvim'
-export AIRFLOW_BUSINESS_UNIT="pandata"
-export PATH="/usr/local/opt/libpq/bin:$PATH"
-export JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.10/libexec/openjdk.jdk/Contents/Home
-
-autoload -U +X bashcompinit && bashcompinit
-autoload -U +X compinit && compinit
-
-source $ZSH/oh-my-zsh.sh
-
 plugins=(
   asdf
   direnv
@@ -20,6 +9,14 @@ plugins=(
   zsh-autosuggestions
 )
 
+source $ZSH/oh-my-zsh.sh
+
+export EDITOR='nvim'
+export AIRFLOW_BUSINESS_UNIT="pandata"
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.10/libexec/openjdk.jdk/Contents/Home
+
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
 
 # Load the shell dotfiles, and then some:
 for file in ~/.{aliases,ignores/exports,functions}; do
@@ -46,23 +43,16 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-# export PATH=$PATH:$(go env GOPATH)/bin
 
-# The next line updates PATH for the Google Cloud SDK.
+# Google Cloud SDK
 if [ -f '/Users/bthng/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/bthng/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
 if [ -f '/Users/bthng/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/bthng/google-cloud-sdk/completion.zsh.inc'; fi
 
-
-# Added by dbt installer
 export PATH="$PATH:/Users/bthng/.local/bin"
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 export PATH="$HOME/.local/bin:$PATH"
 
-# Added by Antigravity
 export PATH="/Users/bthng/.antigravity/antigravity/bin:$PATH"
 
 # pnpm
@@ -75,3 +65,6 @@ esac
 
 # Added by dbt Fusion extension
 alias dbtf=/Users/bthng/.local/bin/dbt
+
+# opencode
+export PATH=/Users/bthng/.opencode/bin:$PATH
