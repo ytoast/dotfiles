@@ -13,3 +13,4 @@ ln -sf ~/dotfiles/config ~/.config
 # ln -sf ~/dotfiles/ignore/exports ~/.ignore/exports
 #
 ln -sf ~/dotfiles/config/hammerspoon ~/.hammerspoon
+ln -sf ~/dotfiles/config/claude/CLAUDE.md ~/.claude/CLAUDE.md
