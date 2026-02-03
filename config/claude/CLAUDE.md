@@ -11,6 +11,8 @@ When working with any libraries, frameworks, or APIs:
 
 ## Git Worktree Best Practices
 
+I prefer using git worktrees (in `.worktrees/`) over branch switching for feature work.
+
 When creating git worktrees, use a `.worktrees/` subdirectory within the repo to keep them organized:
 
 ```bash
@@ -22,6 +24,14 @@ git worktree add .worktrees/feature-branch feature-branch
 ~/github/messari/dagster/                    # main checkout
 ~/github/messari/dagster/.worktrees/         # worktrees folder
 ~/github/messari/dagster/.worktrees/nex-36/  # feature worktree
+```
+
+After creating a worktree, symlink environment files from the main checkout:
+
+```bash
+# Symlink .env and .envrc from main checkout
+ln -sf ../../.env .worktrees/feature-branch/.env
+ln -sf ../../.envrc .worktrees/feature-branch/.envrc
 ```
 
 Benefits:
