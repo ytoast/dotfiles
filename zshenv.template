@@ -1,0 +1,8 @@
+if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
+  source "${VIRTUAL_ENV}/bin/activate"
+fi
+
+export PATH="$PATH:/Users/bthng/.foundry/bin"
+
+# Obsidian Local REST API key (Settings > Local REST API > Copy API Key)
+export OBSIDIAN_API_KEY=""

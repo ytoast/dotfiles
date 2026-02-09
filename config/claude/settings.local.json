@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gcloud config set:*)",
+      "mcp__bigquery__execute_sql"
+    ]
+  }
+}

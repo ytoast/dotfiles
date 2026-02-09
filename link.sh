@@ -14,3 +14,7 @@ ln -sf ~/dotfiles/config ~/.config
 #
 ln -sf ~/dotfiles/config/hammerspoon ~/.hammerspoon
 ln -sf ~/dotfiles/config/claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -sf ~/dotfiles/config/claude/settings.json ~/.claude/settings.json
+ln -sf ~/dotfiles/config/claude/settings.local.json ~/.claude/settings.local.json
+mkdir -p ~/.claude/agents
+ln -sf ~/dotfiles/config/claude/agents/messari-dbt-modeler.md ~/.claude/agents/messari-dbt-modeler.md
