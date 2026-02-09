@@ -34,3 +34,6 @@ keybind = alt+left=text:\x1bB
 keybind = alt+right=text:\x1bF
 
 copy-on-select = clipboard
+
+# Bell notifications for Claude Code
+bell-features = title,attention
