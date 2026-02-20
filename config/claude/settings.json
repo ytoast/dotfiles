@@ -7,7 +7,7 @@
   "alwaysThinkingEnabled": true,
   "mcpServers": {
     "snowflake": {
-      "command": "/opt/homebrew/bin/uvx",
+      "command": "/Users/bthng/.local/bin/uvx",
       "args": [
         "snowflake-labs-mcp",
         "--service-config-file",
