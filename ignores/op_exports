@@ -1,0 +1,3 @@
+export TAVILY_API_KEY=$(op read "op://ENV VARIABLES/Tavily/api_key" --account=my.1password.com)
+export SLACK_BOT_TOKEN=$(op read "op://ENV VARIABLES/Slack Bot/token" --account=my.1password.com)
+export SLACK_TEAM_ID=$(op read "op://ENV VARIABLES/Slack Bot/team_id" --account=my.1password.com)

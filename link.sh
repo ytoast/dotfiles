@@ -10,8 +10,8 @@ ln -sf ~/dotfiles/gitignore_global ~/.gitignore_global
 ln -sf ~/dotfiles/vimrc ~/.vimrc
 ln -sf ~/dotfiles/alacritty.yml ~/.alacritty.yml
 ln -sf ~/dotfiles/config ~/.config
-# ln -sf ~/dotfiles/ignore/exports ~/.ignore/exports
-#
+mkdir -p ~/.ignores
+ln -sf ~/dotfiles/ignores/op_exports ~/.ignores/exports
 ln -sf ~/dotfiles/config/hammerspoon ~/.hammerspoon
 ln -sf ~/dotfiles/config/claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf ~/dotfiles/config/claude/settings.json ~/.claude/settings.json
