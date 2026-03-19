@@ -32,6 +32,9 @@ After creating a worktree, symlink environment files from the main checkout:
 # Symlink .env and .envrc from main checkout
 ln -sf ../../.env .worktrees/feature-branch/.env
 ln -sf ../../.envrc .worktrees/feature-branch/.envrc
+
+# Allow direnv in the new worktree (required if repo uses .envrc)
+cd .worktrees/feature-branch && direnv allow .
 ```
 
 Benefits:
