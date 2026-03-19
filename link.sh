@@ -17,5 +17,14 @@ ln -sf ~/dotfiles/config/hammerspoon ~/.hammerspoon
 ln -sf ~/dotfiles/config/claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf ~/dotfiles/config/claude/settings.json ~/.claude/settings.json
 ln -sf ~/dotfiles/config/claude/settings.local.json ~/.claude/settings.local.json
-mkdir -p ~/.claude/agents
-ln -sf ~/dotfiles/config/claude/agents/messari-dbt-modeler.md ~/.claude/agents/messari-dbt-modeler.md
+# Claude Code directories — warn if real dir exists (may have unsynced content)
+for dir in agents commands hooks; do
+  target="$HOME/.claude/$dir"
+  if [ -L "$target" ]; then
+    rm "$target"
+  elif [ -d "$target" ]; then
+    echo "⚠️  ~/.claude/$dir is a real directory — back it up or merge before re-running."
+    continue
+  fi
+  ln -sf ~/dotfiles/config/claude/$dir "$target"
+done
