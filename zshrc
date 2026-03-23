@@ -69,4 +69,4 @@ alias dbtf=/Users/bthng/.local/bin/dbt
 # opencode
 export PATH=/Users/bthng/.opencode/bin:$PATH
 
-. "$HOME/.grit/bin/env"
+# . "$HOME/.grit/bin/env"
