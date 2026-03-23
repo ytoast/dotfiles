@@ -29,7 +29,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Claude Code needs your attention\" with title \"Claude Code\"' && printf '\\a' > /dev/tty"
+            "command": "osascript -e 'display notification \"Claude Code needs your attention\" with title \"Claude Code\"'; printf '\\a' > \"$(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}')\" 2>/dev/null; true"
           }
         ]
       }

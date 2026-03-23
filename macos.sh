@@ -39,3 +39,6 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # Holding down a character key will repeat the character:
 defaults write -g ApplePressAndHoldEnabled -bool false
 
+# Battery: maintain charge between 70-80%
+battery maintain 70-80
+

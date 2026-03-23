@@ -26,5 +26,8 @@ sh ~/dotfiles/macos.sh
 curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
 sudo installer -pkg AWSCLIV2.pkg -target /
 
+# Install battery CLI (battery charge limiter)
+curl -s https://raw.githubusercontent.com/actuallymentor/battery/main/setup.sh | bash
+
 # Yubikeys: disable OTP option
 ykman config mode FIDO+CCID
