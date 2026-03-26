@@ -4,6 +4,19 @@ You are debugging an issue that spans the Messari data stack: **dbt → API → 
 
 Read [references/messari-stack.md](references/messari-stack.md) first to understand the architecture and naming conventions.
 
+## Execution Rules
+
+- Do NOT launch Explore agents or broad codebase searches.
+- Use Grep and Glob tools directly with the specific keyword from the user's request.
+- If `$ARGUMENTS` is empty or does not contain a specific metric/entity/page name, ask the user before searching.
+- If you must use Agent tools for deeper exploration, set `model: "sonnet"`.
+
+## Search Strategy
+
+1. Start with direct Grep/Glob using the keyword — this covers 90% of cases.
+2. Only if direct search finds nothing, widen the search ONE layer at a time.
+3. Never search all 3 repos simultaneously with broad patterns.
+
 ## Repos
 
 | Layer | Path |
@@ -31,33 +44,24 @@ Ask the user if they haven't specified:
 
 ## Step 2: Trace the Data Path
 
-Given a metric name, entity, or page — trace through all three layers:
+Given a metric name, entity, or page — trace through all three layers using targeted searches:
 
 ### 2a. Find the dbt model
-```bash
-# Search by metric/table name
-find ~/github/messari/dagster/services/dbt/projects/dwh_api/models/api/ -name "*<keyword>*"
-```
+Use Glob: `**/*<keyword>*` in `~/github/messari/dagster/services/dbt/projects/dwh_api/models/api/`
 
-Read the model SQL. Check:
+Read the matching model SQL. Check:
 - What columns does it output?
 - What's the grain (one row per what)?
 - Are there filters, joins, or CTEs that could drop data?
 - Does it reference upstream models that might be broken?
 
 ### 2b. Find the API catalog
-```bash
-# Timeseries catalogs
-grep -rl "<keyword>" ~/github/messari/dwh-api-service/internal/domain/timeseries/catalog/
+Use Grep for `<keyword>` across these paths (run in parallel):
+- `~/github/messari/dwh-api-service/internal/domain/timeseries/catalog/`
+- `~/github/messari/dwh-api-service/internal/domain/screener/catalog/`
+- `~/github/messari/dwh-api-service/internal/domain/direct/catalog/`
 
-# Screener catalogs
-grep -rl "<keyword>" ~/github/messari/dwh-api-service/internal/domain/screener/catalog/
-
-# Direct catalogs
-grep -rl "<keyword>" ~/github/messari/dwh-api-service/internal/domain/direct/catalog/
-```
-
-Read the catalog YAML. Check:
+Read the matching catalog YAML. Check:
 - Does `base_model_name` / `database.table` match the dbt model name?
 - Are `column_name` fields correct (match dbt output columns)?
 - Are `type`, `format`, and aggregation operations correct?
@@ -65,11 +69,9 @@ Read the catalog YAML. Check:
 - Is the tier/permissions blocking access?
 
 ### 2c. Find the frontend config
-```bash
-# Search for metric slug or catalog reference
-grep -rl "<keyword>" ~/github/messari/messari-web/apps/web-app/src/dashboards/
-grep -rl "<keyword>" ~/github/messari/messari-web/apps/web-app/src/common/atomic-charts/
-```
+Use Grep for `<keyword>` across these paths (run in parallel):
+- `~/github/messari/messari-web/apps/web-app/src/dashboards/`
+- `~/github/messari/messari-web/apps/web-app/src/common/atomic-charts/`
 
 Check:
 - Is the metric slug correct (matches API catalog `slug` field)?
@@ -109,7 +111,7 @@ Trace backwards:
 
 ### Interval Mismatch
 - dbt model exists for `1d` but not `1h` — catalog lists `1h` as available → empty response
-- Check which interval models exist: `ls ~/github/messari/dagster/services/dbt/projects/dwh_api/models/api/timeseries/*<name>*`
+- Check which interval models exist with Glob: `*<name>*` in the timeseries directory
 
 ## Step 4: Fix
 

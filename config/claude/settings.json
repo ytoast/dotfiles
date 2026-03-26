@@ -99,5 +99,6 @@
         "SLACK_TEAM_ID": "${SLACK_TEAM_ID}"
       }
     }
-  }
+  },
+  "model": "sonnet"
 }
