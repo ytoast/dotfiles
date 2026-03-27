@@ -16,5 +16,5 @@ fi
 if [[ -n "${TELEGRAM_BOT_TOKEN:-}" && -n "${TELEGRAM_CHAT_ID:-}" ]]; then
     /usr/bin/curl -s "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
         -d chat_id="${TELEGRAM_CHAT_ID}" \
-        -d text="awake deactivated ($(date '+%H:%M'))" > /dev/null 2>&1 || true
+        -d text="[$(scutil --get ComputerName)] awake deactivated ($(date '+%H:%M'))" > /dev/null 2>&1 || true
 fi

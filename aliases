@@ -48,3 +48,5 @@ alias dbtf=/Users/bthng/.local/bin/dbt
 # claude
 alias c=claude
 alias cc='claude --dangerously-skip-permissions'
+
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
