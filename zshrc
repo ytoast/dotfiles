@@ -70,3 +70,10 @@ alias dbtf=/Users/bthng/.local/bin/dbt
 export PATH=/Users/bthng/.opencode/bin:$PATH
 
 # . "$HOME/.grit/bin/env"
+
+# bun completions
+[ -s "/Users/bthng/.bun/_bun" ] && source "/Users/bthng/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
