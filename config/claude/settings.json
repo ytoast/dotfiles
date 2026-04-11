@@ -66,6 +66,7 @@
   },
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
+  "enableRemoteConnections": true,
   "mcpServers": {
     "snowflake": {
       "command": "/Users/bthng/.local/bin/uvx",
