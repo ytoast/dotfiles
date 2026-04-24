@@ -19,6 +19,8 @@ ln -sf ~/dotfiles/config/lazygit/config.yml ~/Library/Application\ Support/lazyg
 ln -sf ~/dotfiles/config/claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf ~/dotfiles/config/claude/settings.json ~/.claude/settings.json
 ln -sf ~/dotfiles/config/claude/settings.local.json ~/.claude/settings.local.json
+mkdir -p ~/.terminfo/78
+cp ~/dotfiles/terminfo/xterm-ghostty ~/.terminfo/78/xterm-ghostty
 # Claude Code directories — warn if real dir exists (may have unsynced content)
 for dir in agents commands hooks; do
   target="$HOME/.claude/$dir"
